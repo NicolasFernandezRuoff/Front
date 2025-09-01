@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="homePage.css" rel="stylesheet">
+    <script src="homePage.js" defer></script>
+    <title>MetaMapa</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm px-3">
+        <div class="container-fluid">
+
+            <a class="navbar-brand custom-navbar" href="#">
+                <i class="bi bi-compass"></i>
+                MetaMapa
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMetaMapa">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse  " id="navbarMetaMapa">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 custom-navbar-center">
+                    <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Cargar Hecho</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Mapa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contacto / Soporte</a></li>
+                  </ul>
+                  
+
+                <form class="d-flex me-3 buscardor-personalizado" role="search">
+                    <div class="input-group">
+                      <input class="form-control" type="search" placeholder="Buscar hechos" aria-label="Buscar">
+                      <span class="input-group-text">
+                        <i class="bi bi-search"></i>
+                      </span>
+                    </div>
+                  </form>
+
+
+                <a href="#" class="btn btn-login">
+                    <i class="bi bi-person"></i> Login / Perfil
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-md buscador-principal shadow-sm">
+        <!-- Formulario de búsqueda -->
+        <form class="buscador-personalizado">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Buscar hechos por categoría, tags, nombre..." aria-label="Buscar">
+            <span class="input-group-text">
+              <i class="bi bi-search"></i>
+            </span>
+          </div>
+        </form>
+    
+        <!-- Categorías -->
+        <div class="categorias">
+          <div id="TodasLasCategorias"><span class="">Categorias:</span></div>  
+        </div>
+      </div>
+
+<!-- TODO  Acordarce que el titulo descripcion y todo eso y la imagen del fondo viene del back-->
+      <div class="container-md card-principal-personalizada">
+        <div class="card-banner">
+          <div class="card-content">
+            <h2 class="card-title">El Faro de Alejandría: Maravilla Antigua</h2> 
+            <p class="card-description">
+              Uno de los siete prodigios del mundo antiguo, el Faro de Alejandría guiaba a los marineros con su luz brillante.
+              Un hito de la ingeniería y la arquitectura.
+            </p>
+            <button class="btn btn-light">Ver Detalles</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container my-5">
+        <h3 class="mb-4 hechos-explorar">Explora Hechos</h3>
+        <div class="row g-4" id="cards-container"></div>
+      
+
+        <nav aria-label="Page navigation" class="mt-4">
+            <ul class="justify-content-center pagination">
+              <li class="page-item">
+                <a class="page-link pagination-items" href="#" id="prev-btn">‹ Anterior</a>
+              </li>
+              <li class="page-item" id="cantidad-paginas"></li>
+              <li class="page-item">
+                <a class="page-link pagination-items" href="#" id="next-btn">Siguiente ›</a>
+              </li>
+            </ul>
+          </nav>
+      </div>
+
+
+
+      <div class="container-md mapa-personalizado">
+        <h2 class="card-title">Mapa General de Hechos</h2>
+        <p> Visulizar las ubicaciones de los hechos descubiertos</p>
+        <img src="ImagenDePuebas\Selection.png" alt="Mapa de Hechos" width="1500px" class="img-fluid rounded shadow-sm">
+
+
+      </div>
+
+      <footer class="footer-personalizado">
+        <div class="footer-container">
+          
+
+          <div class="footer-left footer-left-personalizado ">
+            <span>Legal</span>
+          </div>
+          
+          <!-- Centro -->
+          <div class="footer-center">
+            © 2025 MetaMapa Todos los derechos reservados • 
+            <a href="/terminos" class="footer-link">Términos de Uso</a> • 
+            <a href="/privacidad" class="footer-link">Política de Privacidad</a>
+          </div>
+          
+          <!-- Derecha -->
+          <div class="footer-right footer-left-personalizado">
+            <a href="https://twitter.com" target="_blank" class="footer-icon">
+                <i class="bi bi-twitter"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="footer-icon">
+                <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://github.com" target="_blank" class="footer-icon">
+                <i class="bi bi-github"></i>
+            </a>
+          </div>
+          
+        </div>
+      </footer>
+      
+</body>
+
+</html>
