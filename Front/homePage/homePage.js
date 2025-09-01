@@ -76,7 +76,6 @@ const data = [
                 <div class="container-md mapa-personalizado">
                 <div id="map-container" style="height:100px;" class="rounded shadow-sm"></div>
               </div>
-
               </div>
             </div>
           </div>

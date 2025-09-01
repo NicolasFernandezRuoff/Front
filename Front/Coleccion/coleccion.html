@@ -43,7 +43,7 @@
 
 
     <div class="container-xxl buscador-principal">
-      <!-- Formulario de búsqueda -->
+      <h4>Buscador</h4>
       <form class="buscador-personalizado">
         <div class="input-group">
           <input class="form-control" type="search" placeholder="Buscar hechos por categoría, tags, nombre..." aria-label="Buscar">
@@ -54,8 +54,7 @@
       </form>
     </div>
   
-
-    <div id="hechosCarousel" class="carousel slide container-xxl" data-bs-ride="carousel">
+    <div id="hechosCarousel" class="carousel slide container my-4 " data-bs-ride="carousel">
       <div class="carousel-inner" id="hechos-container"></div>
     
       <!-- Controles -->
@@ -67,19 +66,28 @@
       </button>
     </div>
     
-    <div class="container-xxl">
-      <h3 class="tituloColeccion">Hechos</h3>
-      <div id="hechosPorColeccion" class="container-xxl row"></div>
+    <div class=" container my-4 buscador-principal">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="tituloColeccion mb-0">Hechos</h3>
+        <button id="toggleMapBtn" class="btn btn-outline-primary">
+          <i class="bi bi-map"></i> Ver Mapa
+        </button>
+      </div>
+    
+      <div id="mainRow" class="row g-3">
+        <div id="hechosColumna" class="col-12">
+          <div id="hechosPorColeccion" class="row g-3"></div>
+        </div>
+    
+        <div id="mapaColumna" class="col-12 col-lg-4 d-none">
+          <div class="mapa-personalizado p-3">
+            <div id="map-container" style="height:600px;" class="rounded shadow-sm"></div>
+          </div>
+        </div>
+      </div>
+    
       <div class="d-flex justify-content-center my-3" id="paginacion"></div>
     </div>
-  
-
-
-  <div class="container-md mapa-personalizado">
-    <h2 class="card-title">Mapa General de Hechos</h2>
-    <p>Visulizar las ubicaciones de los hechos descubiertos</p>
-    <div id="map-container" style="height:500px;" class="rounded shadow-sm"></div>
-  </div>
 
   <footer class="footer-personalizado">
     <div class="footer-container">

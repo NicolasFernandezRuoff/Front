@@ -1,0 +1,132 @@
+:root {
+    --primary500: #001f3fff;
+    --borderColor: #dee1e6ff;
+    --neutral600: rgb(67, 87, 87);
+    --natural200: rgb(221, 228, 240);
+    --natural450: rgb(134, 153, 179);
+    --borderAzul: rgb(190, 211, 231);
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif !important;
+    background-color: var(--primary100);
+  }
+
+.custom-navbar {
+    font-family: "Inter", sans-serif;
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: 700;
+    color: var(--primary500) !important;
+    align-items: center;
+  }
+  
+  .custom-navbar-center .nav-link {
+    position: relative;
+    color: var(--primary500) !important;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    transition: color 0.3s ease;
+  }
+  
+  .custom-navbar-center .nav-link:hover {
+    font-weight: 700;
+  }
+  
+  .custom-navbar-center .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary500);
+    transition: width 0.3s ease;
+  }
+  
+  .custom-navbar-center .nav-link.active {
+    font-weight: 700;
+  }
+  
+  .custom-navbar-center .nav-link.active::after {
+    width: 100%;
+  }
+  
+  .btn-login {
+    border-color: var(--borderColor);
+    color: var(--primary500) !important;
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+    padding: 10px 20px;
+    align-items: center;
+  }
+  
+.footer-personalizado {
+    background-color: var(--primary500);
+    color: var(--natural450);
+    font-family: 'Inter', sans-serif;
+    padding: 1rem 2rem;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* para móviles */
+  }
+  
+  .footer-left {
+    font-weight: bold;
+  }
+  
+  .footer-center {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .footer-link {
+    color: var(--natural450);
+    text-decoration: none;
+    margin: 0 0.3rem;
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-right {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .footer-icon {
+    color: var(--natural450);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-icon:hover {
+    color: white;
+  }
+  
+  .footer-left-personalizado{
+    color: #ffffff ; 
+  }
+
+  .login-personalizado{
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  .btn-personalizado{
+    background-color: var(--primary500);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 18px;
+    line-height: 22px;
+    transition: background-color 0.3s ease;
+  }

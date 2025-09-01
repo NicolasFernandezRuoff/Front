@@ -322,19 +322,19 @@ function renderHechos() {
 
   hechosPagina.forEach(hecho => {
     const etiquetasHTML = hecho.etiquetas
-      .slice(0, 3) // max 3 etiquetas
-      .map(e => `<span class="badge bg-secondary me-1">${e.nombreDeEtiqueta}</span>`)
-      .join("");
+    .slice(0, 3) // max 3 etiquetas
+    .map(e => `<span class="etiqueta">${e.nombreDeEtiqueta}</span>`)
+    .join("");
 
     const card = `
-      <div class="col-md-3 mb-3">
+      <div class="col-md-6 mb-6">
         <div class="card h-100 shadow-sm border-0">
           <img src="${hecho.multimedia[0]}" class="card-img-top" alt="${hecho.titulo}">
           <div class="card-body">
-            <span class="badge bg-primary mb-2">${hecho.categoria.descripcion}</span>
+          <div>${etiquetasHTML}</div>
             <h5 class="card-title">${hecho.titulo}</h5>
             <p class="card-text text-muted">${hecho.descripcion}</p>
-            <div>${etiquetasHTML}</div>
+            
           </div>
         </div>
       </div>
@@ -417,3 +417,31 @@ hechosMock.forEach(hecho => {
       `);
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("toggleMapBtn");
+  const mapaColumna = document.getElementById("mapaColumna");
+  const hechosColumna = document.getElementById("hechosColumna");
+
+  hechosColumna.classList.remove("col-lg-8");
+  hechosColumna.classList.add("col-12");
+
+  toggleBtn.addEventListener("click", () => {
+    const estaOculto = mapaColumna.classList.contains("d-none");
+
+    if (estaOculto) {
+      mapaColumna.classList.remove("d-none");
+      hechosColumna.classList.remove("col-12");
+      hechosColumna.classList.add("col-lg-8");
+      toggleBtn.innerHTML = '<i class="bi bi-map"></i> Ocultar Mapa';
+
+
+    } else {
+      mapaColumna.classList.add("d-none");
+      hechosColumna.classList.remove("col-lg-8");
+      hechosColumna.classList.add("col-12");
+      toggleBtn.innerHTML = '<i class="bi bi-map"></i> Ver Mapa';
+    }
+  });
+});
+

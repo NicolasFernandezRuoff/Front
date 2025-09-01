@@ -7,6 +7,65 @@
   --borderAzul: rgb(190, 211, 231);
 }
 
+body {
+  font-family: 'Inter', sans-serif !important;
+  background-color: var(--primary100);
+}
+
+.etiqueta {
+  display: inline-block;
+  background-color: #f1f3f5;
+  color: #495057;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.etiqueta:hover {
+  background-color: #dee2e6;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+
+#hechosPorColeccion .card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+#hechosPorColeccion .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+#hechosPorColeccion .card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
+
+#hechosPorColeccion .card-body {
+  padding: 15px;
+}
+
+#hechosPorColeccion .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+#hechosPorColeccion .card-text {
+  font-size: 0.9rem;
+  color: #6c757d;
+  height: 45px;
+  overflow: hidden;
+}
+
+
 .custom-navbar {
   font-family: "Inter", sans-serif;
   font-size: 25px;
@@ -215,7 +274,6 @@
   line-height: 25px;
   font-weight: 700;
   color: var(--primary500) !important; 
-  margin-left: 50px;
   margin-top: 30px;
   align-items: center;
 }
