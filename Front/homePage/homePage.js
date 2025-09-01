@@ -65,7 +65,7 @@ const data = [
   
     items.forEach(item => {
       const card = `
-        <div class="col-md-3">
+        <div class="col-md-6">
           <div class="fact-card">
             <img src="${item.img}" class="card-img-top" alt="Imagen Hecho">
             <div class="card-body">
@@ -73,8 +73,10 @@ const data = [
               <h5 class="card-title">${item.titulo}</h5>
               <p class="card-text">${item.descripcion}</p>
               <div class="map-preview">
-                <img src="${item.mapa}" class="img-fluid rounded" alt="Mapa">
-                <span class="location">${item.lugar}</span>
+                <div class="container-md mapa-personalizado">
+                <div id="map-container" style="height:100px;" class="rounded shadow-sm"></div>
+              </div>
+
               </div>
             </div>
           </div>
@@ -134,3 +136,5 @@ const data = [
     const catego = `<span class="categoria-item separado-paginas">${categoria}</span>`;
     categoriaContainer.innerHTML += catego;
   });
+
+

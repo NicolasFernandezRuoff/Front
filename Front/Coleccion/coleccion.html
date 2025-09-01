@@ -5,93 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link href="coleccion.css" rel="stylesheet">
     <script src="coleccion.js" defer></script>
     <title>Coleccion</title>
 </head>
 <body>
-    <div class="topbar">
-        <a href="#" class="btn btn-login">
-            <i class="bi bi-person"></i> Login / Perfil
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm px-3">
+        <div class="container-fluid">
+
+            <a class="navbar-brand custom-navbar" href="#">
+                <i class="bi bi-compass"></i>
+                MetaMapa
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMetaMapa">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse  " id="navbarMetaMapa">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 custom-navbar-center">
+                    <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Cargar Hecho</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Mapa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contacto / Soporte</a></li>
+                </ul>
+                  
+                <a href="#" class="btn btn-login">
+                    <i class="bi bi-person"></i> Login / Perfil
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container-xxl buscador-principal">
+      <!-- Formulario de búsqueda -->
+      <form class="buscador-personalizado">
+        <div class="input-group">
+          <input class="form-control" type="search" placeholder="Buscar hechos por categoría, tags, nombre..." aria-label="Buscar">
+          <span class="input-group-text">
+            <i class="bi bi-search"></i>
+          </span>
+        </div>
+      </form>
+    </div>
+  
+
+    <div id="hechosCarousel" class="carousel slide container-xxl" data-bs-ride="carousel">
+      <div class="carousel-inner" id="hechos-container"></div>
+    
+      <!-- Controles -->
+      <button class="carousel-control-prev flecha" type="button" data-bs-target="#hechosCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next flecha" type="button" data-bs-target="#hechosCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+    
+    <div class="container-xxl">
+      <h3 class="tituloColeccion">Hechos</h3>
+      <div id="hechosPorColeccion" class="container-xxl row"></div>
+      <div class="d-flex justify-content-center my-3" id="paginacion"></div>
+    </div>
+  
+
+
+  <div class="container-md mapa-personalizado">
+    <h2 class="card-title">Mapa General de Hechos</h2>
+    <p>Visulizar las ubicaciones de los hechos descubiertos</p>
+    <div id="map-container" style="height:500px;" class="rounded shadow-sm"></div>
+  </div>
+
+  <footer class="footer-personalizado">
+    <div class="footer-container">
+      
+
+      <div class="footer-left footer-left-personalizado ">
+        <span>Legal</span>
+      </div>
+      
+      <!-- Centro -->
+      <div class="footer-center">
+        © 2025 MetaMapa Todos los derechos reservados • 
+        <a href="/terminos" class="footer-link">Términos de Uso</a> • 
+        <a href="/privacidad" class="footer-link">Política de Privacidad</a>
+      </div>
+      
+      <!-- Derecha -->
+      <div class="footer-right footer-left-personalizado">
+        <a href="https://twitter.com" target="_blank" class="footer-icon">
+            <i class="bi bi-twitter"></i>
         </a>
+        <a href="https://linkedin.com" target="_blank" class="footer-icon">
+            <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="https://github.com" target="_blank" class="footer-icon">
+            <i class="bi bi-github"></i>
+        </a>
+      </div>
+      
     </div>
+  </footer>
 
-    <div class="Organizacion">
-    <div class="sidebar">
-        <h4> <i class="bi bi-compass"></i> MetaMapa</h4>
-        <ul class="list-unstyled">
-            <li><a href="#"><i class="bi bi-house-door items-sidebar"></i> Inicio</a></li>
-        </ul>
-
-        <div class="section-title">Hechos</div>
-        <ul class="list-unstyled">
-          <li><a href="#"> <i class="bi bi-info-circle"></i> Ver Detalles</a></li>
-          <li><a href="#"><i class="bi bi-upload"></i> Cargar Hecho</a></li>
-        </ul>
-    
-        <div class="section-title">Explorar</div>
-        <ul class="list-unstyled">
-          <li><a href="#"> <i class="bi bi-map"></i> Mapa</a></li>
-          <li><a href="#"><i class="bi bi-envelope"></i> Contacto / Soporte</a></li>
-        </ul>
-    
-        <div class="section-title">Tus Hechos</div>
-        <ul class="list-unstyled">
-          <li><a href="#"><i class="bi bi-gear"></i> Administrar hechos</a></li>
-        </ul>
-    </div>
-
-    <div class="main-content container-fluid">
-        <h2>La Puerta del Sol</h2>
-        <p class="text-muted">Monumento Histórico</p>
-
-        <div class="mb-3">
-            <span class="badge bg-light text-dark">Histórico</span>
-            <span class="badge bg-light text-dark">Cultural</span>
-            <span class="badge bg-light text-dark">Turismo</span>
-            <span class="badge bg-light text-dark">Madrid</span>
-        </div>
-
-        <div class="text-descripcion">
-            <h5>Descripción</h5>
-            <p> La Puerta del Sol es una de las plazas más famosas y céntricas de Madrid. Sirve como punto de encuentro...</p>
-        </div>
-
-
-        <div class="d-flex gap-2 mb-4">
-            <button class="btn btn-modidificaion"><i class="bi bi-pencil"></i> Solicitar Modificación</button>
-            <button class="btn btn-eliminacion"><i class="bi bi-trash"></i> Solicitar Eliminación</button>
-            <button class="btn btn-compartir"><i class="bi bi-share"></i> Compartir</button>
-        </div>
-
-        <h5>Galería de Imágenes</h5>
-        <div class="row g-3">
-            <div class="col-md-3"><img src="https://picsum.photos/400/300" class="img-fluid rounded"></div>
-            <div class="col-md-3"><img src="https://picsum.photos/401/300" class="img-fluid rounded"></div>
-            <div class="col-md-3"><img src="https://picsum.photos/402/300" class="img-fluid rounded"></div>
-            <div class="col-md-3"><img src="https://picsum.photos/403/300" class="img-fluid rounded"></div>
-        </div>
-        
-    </div>
-</div>
-    <footer class="footer-personalizado">
-        <div class="footer-container">
-          <div class="footer-left footer-left-personalizado ">
-            <span>Legal</span>
-          </div>
-          <div class="footer-center">
-            © 2025 MetaMapa Todos los derechos reservados • 
-            <a href="/terminos" class="footer-link">Términos de Uso</a> • 
-            <a href="/privacidad" class="footer-link">Política de Privacidad</a>
-          </div>
-          <div class="footer-right footer-left-personalizado">
-            <a href="https://twitter.com" target="_blank" class="footer-icon"><i class="bi bi-twitter"></i></a>
-            <a href="https://linkedin.com" target="_blank" class="footer-icon"><i class="bi bi-linkedin"></i></a>
-            <a href="https://github.com" target="_blank" class="footer-icon"><i class="bi bi-github"></i></a>
-          </div>
-        </div>
-    </footer>
-</body>
 </body>
 </html>

@@ -1,0 +1,236 @@
+:root {
+  --primary500: #001F3FFF; 
+  --primary100: #FAFAFBFF;
+  --borderColor:#DEE1E6FF;
+  --neutral600: rgb(67, 87, 87);
+  --natural200: rgb(221, 228, 240);
+  --natural450: rgb(134, 153, 179);
+  --borderAzul: rgb(190, 211, 231);
+  --beige: #F5F5DCFF;
+  --beigeOscuro: #E3D9B3FF;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--primary100);
+}
+
+.footer-personalizado {
+  background-color: var(--primary500);
+  color: var(--natural450);
+  font-family: 'Inter', sans-serif;
+  padding: 1rem 2rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* para móviles */
+}
+
+.footer-left {
+  font-weight: bold;
+}
+
+.footer-center {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-link {
+  color: var(--natural450);
+  text-decoration: none;
+  margin: 0 0.3rem;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-icon {
+  color: var(--natural450);
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.footer-icon:hover {
+  color: white;
+}
+
+.footer-left-personalizado {
+  color: #ffffff ; 
+}
+
+.sidebar {
+  width: 300px;
+  min-height: 100vh;
+  color: var(--primary500);
+  background-color: #ffffff;
+  border-right: 1px solid var(--borderColor);
+  padding: 1rem;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: var(--primary500);
+}
+
+.sidebar a:hover {
+  text-decoration: none;
+  color: var(--primary500);
+  background-color: var(--borderAzul);
+  border-radius: 5px;
+  padding: 0.3rem 0.8rem;
+}
+
+.sidebar h4 {
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: 700;
+  color: var(--primary500) !important; 
+  margin-bottom: 30px;
+}
+
+.sidebar .section-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.items-sidebar {
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.list-unstyled {
+  padding: 0;
+  margin-top: 4px;
+  font-size: 18px;
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 250px;
+  right: 0;
+  height: 60px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 100;
+}
+
+.btn-login {
+  border-color: var(--borderColor);
+  color: var(--primary500) !important;
+  border-radius: 8px;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 600;
+  padding: 10px 20px;
+  align-items: center;
+}
+
+.main-content {
+  margin-top: 60px;
+  padding: 20px;
+}
+
+.Organizacion {
+  display: flex;
+}
+
+.btn-modidificaion {
+  background-color: var(--primary500);
+  color: white;
+}
+
+.btn-modidificaion:hover {
+  background-color: var(--natural200);
+  color: var(--primary500);
+}
+
+.btn-eliminacion {
+  background-color: var(--beige);
+  color: var(--primary500);
+  text-align: center;
+  align-items: center;
+}
+
+.btn-eliminacion:hover {
+  background-color: var(--beigeOscuro);
+  color: var(--primary500); 
+}
+
+.btn-compartir {
+  background-color: white;
+  color: var(--primary500);
+  border: 1px solid var(--primary500);
+}
+
+.btn-compartir:hover {
+  background-color: var(--natural200);
+  color: var(--primary500);
+  border: 1px solid var(--primary500);
+}
+
+.text-descripcion {
+  margin-top: 10px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.estructura h2 {
+  font-size: 40px;
+  line-height: 25px;
+  font-weight: 700;
+  color: var(--primary500) !important; 
+  align-items: center;
+}
+
+.estructura p {
+  font-size: 18px;
+  line-height: 25px;
+  color: var(--primary500) !important; 
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+.etiquetas-item{
+  background-color: var(--natural200);
+  border-radius: 30px;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--borderAzul);
+  margin-bottom: 10px;
+}
+
+.separado-paginas{
+  margin-left: 5px;
+}
+.botones-hecho{
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+.galeria {
+  margin-top: 50px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}

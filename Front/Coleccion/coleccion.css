@@ -1,18 +1,160 @@
 :root {
-  --primary500: #001F3FFF; 
-  --primary100: #FAFAFBFF;
-  --borderColor:#DEE1E6FF;
+  --primary500: #001f3fff;
+  --borderColor: #dee1e6ff;
   --neutral600: rgb(67, 87, 87);
   --natural200: rgb(221, 228, 240);
   --natural450: rgb(134, 153, 179);
   --borderAzul: rgb(190, 211, 231);
-  --beige: #F5F5DCFF;
-  --beigeOscuro: #E3D9B3FF;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--primary100);
+.custom-navbar {
+  font-family: "Inter", sans-serif;
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: 700;
+  color: var(--primary500) !important;
+  align-items: center;
+}
+
+.custom-navbar-center .nav-link {
+  position: relative;
+  color: var(--primary500) !important;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.custom-navbar-center .nav-link:hover {
+  font-weight: 700;
+}
+
+.custom-navbar-center .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 3px;
+  background-color: var(--primary500);
+  transition: width 0.3s ease;
+}
+
+.custom-navbar-center .nav-link.active {
+  font-weight: 700;
+}
+
+.custom-navbar-center .nav-link.active::after {
+  width: 100%;
+}
+
+.btn-login {
+  border-color: var(--borderColor);
+  color: var(--primary500) !important;
+  border-radius: 8px;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 600;
+  padding: 10px 20px;
+  align-items: center;
+}
+
+
+
+.mapa-personalizado {
+  border-radius: 8px;
+  border: 1px solid var(--borderColor);
+  margin-bottom: 20px;
+}
+.mapa-personalizado h2 {
+  margin-top: 25px;
+  font-family: "Inter", sans-serif;
+  color: var(--primary500);
+}
+.mapa-personalizado p {
+  font-family: "Inter", sans-serif;
+  color: var(--neutral600);
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  margin-top: 3px;
+}
+
+#hechosCarousel {
+  margin: 40px auto;
+  position: relative;
+  padding: 0 70px;
+}
+
+
+.flecha {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.3s;
+}
+
+
+.flecha .carousel-control-prev-icon,
+.flecha .carousel-control-next-icon {
+  filter: invert(1);
+}
+
+
+.carousel-item .card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.carousel-item .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+
+.carousel-item .card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
+
+
+.carousel-item .card-body {
+  padding: 15px;
+}
+
+
+.carousel-item .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+
+.carousel-item .card-text {
+  font-size: 0.9rem;
+  color: #6c757d;
+  height: 45px;
+  overflow: hidden;
+}
+
+
+.carousel-item .card-body > div {
+  display: inline-block;
+  background-color: #f1f3f5;
+  color: #495057;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
 }
 
 .footer-personalizado {
@@ -63,137 +205,49 @@ body {
   color: white;
 }
 
-.footer-left-personalizado {
+.footer-left-personalizado{
   color: #ffffff ; 
 }
 
-.sidebar {
-  width: 300px;
-  min-height: 100vh;
-  color: var(--primary500);
-  background-color: #ffffff;
-  border-right: 1px solid var(--borderColor);
-  padding: 1rem;
-}
-
-.sidebar a {
-  text-decoration: none;
-  color: var(--primary500);
-}
-
-.sidebar a:hover {
-  text-decoration: none;
-  color: var(--primary500);
-  text-decoration: underline;
-  background-color: var(--borderAzul);
-  border-radius: 5px;
-  padding: 0.3rem 0.8rem;
-}
-
-.sidebar h4 {
-  font-size: 25px;
+.tituloColeccion{
+  font-family: 'Inter', sans-serif;
+  font-size: 50px;
   line-height: 25px;
   font-weight: 700;
   color: var(--primary500) !important; 
-  margin-bottom: 30px;
-}
-
-.sidebar .section-title {
-  font-size: 0.9rem;
-  font-weight: bold;
-  text-transform: uppercase;
+  margin-left: 50px;
   margin-top: 30px;
-  margin-bottom: 0.5rem;
-  color: #555;
-}
-
-.items-sidebar {
   align-items: center;
-  width: 100%;
-  padding: 0.5rem 0;
 }
 
-.list-unstyled {
-  padding: 0;
-  margin-top: 4px;
-  font-size: 18px;
-}
-
-.topbar {
-  position: fixed;
-  top: 0;
-  left: 250px;
-  right: 0;
-  height: 60px;
-  background: white;
-  border-bottom: 1px solid #ddd;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0 20px;
-  z-index: 100;
-}
-
-.btn-login {
-  border-color: var(--borderColor);
-  color: var(--primary500) !important;
+.buscador-principal {
+  margin-top: 40px;
+  margin-bottom: 40px;
   border-radius: 8px;
-  font-size: 18px;
-  line-height: 22px;
-  font-weight: 600;
-  padding: 10px 20px;
-  align-items: center;
-}
-
-.main-content {
-  margin-top: 60px;
-  padding: 20px;
-}
-
-.Organizacion {
-  display: flex;
-}
-
-.btn-modidificaion {
-  background-color: var(--primary500);
-  color: white;
-}
-
-.btn-modidificaion:hover {
-  background-color: var(--natural200);
-  color: var(--primary500);
-}
-
-.btn-eliminacion {
-  background-color: var(--beige);
-  color: var(--primary500);
-  text-align: center;
-  align-items: center;
-}
-
-.btn-eliminacion:hover {
-  background-color: var(--beigeOscuro);
-  color: var(--primary500); 
-}
-
-.btn-compartir {
-  background-color: white;
-  color: var(--primary500);
-  border: 1px solid var(--primary500);
-}
-
-.btn-compartir:hover {
-  background-color: var(--natural200);
-  color: var(--primary500);
-  border: 1px solid var(--primary500);
-}
-
-.text-descripcion {
-  background: rgba(255, 255, 255, 0.25); /* blanco translúcido */
-  backdrop-filter: blur(20px); 
-  -webkit-backdrop-filter: blur(20px); 
-  border-radius: 10px;
-  border: 1px solid rgba(250, 0, 0, 0.4);
+  border: 1px solid var(--borderColor);
   padding: 1rem;
-  
+  background: #fff;
+}
+
+.buscador-personalizado input {
+  font-family: 'Inter', sans-serif;
+  color: var(--borderColor);
+}
+
+#hechosPorColeccion{
+  margin-top: 30px;
+}
+
+@media (max-width: 992px) {
+  .carousel-item .col-md-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-item .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
