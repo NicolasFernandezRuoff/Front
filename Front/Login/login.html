@@ -9,6 +9,7 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link href="login.css" rel="stylesheet">
+    <script src="login.js" defer></script>
     <title>Login</title>
 </head>
 <body>
@@ -38,33 +39,65 @@
     <div class="container d-flex justify-content-center align-items-center min-vh-50 login-personalizado">
         <div class="card shadow-sm p-4 w-100" style="max-width: 400px;">
           <h2 class="text-center mb-4">Login</h2>
-          <form>
+          <!-- Login Form -->
+          <form id="loginForm">
             <!-- Email -->
             <div class="mb-3">
-              <label for="email" class="form-label">Email </label>
-              <input type="email" class="form-control" id="email" placeholder="example@domain.com" required>
+              <label for="loginEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="loginEmail" placeholder="example@domain.com" required>
             </div>
-      
+
             <!-- Password -->
             <div class="mb-3">
-              <label for="password" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" id="password" placeholder="********" required>
+              <label for="loginPassword" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="loginPassword" placeholder="********" required>
             </div>
-      
+
             <!-- Remember + Forgot -->
-            <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="d-flex justify-cosntent-between align-items-center mb-3">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="rememberMe" checked>
-                <label class="form-check-label" for="rememberMe">Recoda la secion</label>
+                <input class="form-check-input" type="checkbox" id="rememberMe" checked>
+                <label class="form-check-label" for="rememberMe">Recordar sesión</label>
               </div>
-              <a href="#!" class="text-decoration-none">Olvidaste tu contraseña?</a>
+              <a href="#!" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
             </div>
-      
+
             <!-- Submit -->
             <button type="submit" class="btn btn-personalizado w-100">Login</button>
-      
+
             <!-- Register link -->
-            <p class="text-center mt-3 mb-0">No estas registrado? <a href="#!">Register</a></p>
+            <p class="text-center mt-3 mb-0">
+              ¿No estás registrado? <a href="#" id="showRegister">Registrate</a>
+            </p>
+          </form>
+
+          <!-- Register Form (oculto al inicio) -->
+          <form id="registerForm" style="display:none;">
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="registerEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="registerEmail" placeholder="example@domain.com" required>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="registerPassword" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="registerPassword" placeholder="********" required>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="mb-3">
+              <label for="registerConfirm" class="form-label">Confirmar Contraseña</label>
+              <input type="password" class="form-control" id="registerConfirm" placeholder="********" required>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn btn-personalizado w-100">Registrarse</button>
+
+            <!-- Back to Login link -->
+            <p class="text-center mt-3 mb-0">
+              ¿Ya tenés cuenta? <a href="#" id="showLogin">Iniciar sesión</a>
+            </p>
           </form>
         </div>
       </div>
