@@ -1,0 +1,112 @@
+:root {
+    --primary500: #001F3FFF; 
+    --borderColor:#DEE1E6FF;
+    --neutral600: rgb(67, 87, 87);
+    --natural200: rgb(221, 228, 240);
+    --natural450: rgb(134, 153, 179);
+    --borderAzul: rgb(190, 211, 231);
+    --azulMarino: #001f3f;
+    --beige: #f5f5dc;
+    --mostaza: #d4a017;
+    --verdeAgua: #20c997;
+    --bordoSuave: #b23a48;
+    --borderColor: #e0e0e0;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif !important;
+    background: linear-gradient(135deg, #f9fafc, #eef3f9);
+  }
+  
+  .card-panel {
+    border-radius: 1rem;
+    border: 1px solid var(--borderColor);
+    transition: all 0.3s ease;
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
+  .card-panel:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary500);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+  
+  .icon-circle {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .caja-principal{
+    margin-top: 50px;
+  }
+.text-mostaza { color: var(--mostaza); }
+.text-verdeAgua { color: var(--verdeAgua); }
+.text-bordo { color: var(--bordoSuave); }
+
+.bg-mostaza { background-color: var(--mostaza) !important; }
+.bg-verdeAgua { background-color: var(--verdeAgua) !important; }
+.bg-bordo { background-color: var(--bordoSuave) !important; }
+
+.btn-mostaza { background-color: var(--mostaza); color: #fff; }
+.btn-verdeAgua { background-color: var(--verdeAgua); color: #fff; }
+.btn-bordo { background-color: var(--bordoSuave); color: #fff; }
+
+
+.footer-personalizado {
+    background-color: var(--primary500);
+    color: var(--natural450);
+    font-family: 'Inter', sans-serif;
+    padding: 1rem 2rem;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-left {
+    font-weight: bold;
+  }
+  
+  .footer-center {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .footer-link {
+    color: var(--natural450);
+    text-decoration: none;
+    margin: 0 0.3rem;
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-right {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .footer-icon {
+    color: var(--natural450);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-icon:hover {
+    color: white;
+  }
+
+  .footer-left-personalizado{
+    color: #ffffff ; 
+  }
