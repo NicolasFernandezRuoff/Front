@@ -57,6 +57,17 @@
 .custom-navbar-center .nav-link.active::after {
   width: 100%;
 }
+
+.btn-login {
+  border-color: var(--borderColor);
+  color: var(--primary500) !important;
+  border-radius: 8px;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 600;
+  padding: 10px 20px;
+  align-items: center;
+}
   
   .card-panel {
     border-radius: 1rem;
