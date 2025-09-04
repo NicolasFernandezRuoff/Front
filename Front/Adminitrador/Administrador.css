@@ -17,6 +17,46 @@
     font-family: 'Inter', sans-serif !important;
     background: linear-gradient(135deg, #f9fafc, #eef3f9);
   }
+
+  .custom-navbar {
+    font-family: 'Inter', sans-serif;
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: 700;
+    color: var(--primary500) !important; 
+    align-items: center;
+}
+
+.custom-navbar-center .nav-link {
+    position: relative;
+    color: var(--primary500) !important;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.custom-navbar-center .nav-link:hover {
+  font-weight: 700;
+}
+
+.custom-navbar-center .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 3px;
+  background-color: var(--primary500);
+  transition: width 0.3s ease;
+}
+
+.custom-navbar-center .nav-link.active {
+  font-weight: 700;
+}
+
+.custom-navbar-center .nav-link.active::after {
+  width: 100%;
+}
   
   .card-panel {
     border-radius: 1rem;
