@@ -8,6 +8,11 @@
     --grisClaro: #f1f1f1;
 }
 
+body {
+    font-family: 'Inter', sans-serif !important;
+    background-color: var(--primary100);
+  }
+  
 .custom-navbar {
     font-family: 'Inter', sans-serif;
     font-size: 25px;
