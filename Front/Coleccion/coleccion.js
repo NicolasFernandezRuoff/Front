@@ -434,6 +434,10 @@ document.addEventListener("DOMContentLoaded", () => {
       hechosColumna.classList.remove("col-12");
       hechosColumna.classList.add("col-lg-8");
       toggleBtn.innerHTML = '<i class="bi bi-map"></i> Ocultar Mapa';
+      
+    setTimeout(() => {
+      map.invalidateSize();
+    }, 300);
 
 
     } else {
