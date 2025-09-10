@@ -12,7 +12,7 @@
     <script src="login.js" defer></script>
     <title>Login</title>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg bg-white shadow-sm px-3">
         <div class="container-fluid">
 
@@ -36,11 +36,13 @@
             </div>
         </div>
     </nav>
+
+  <main class="flex-grow-1 d-flex justify-content-center align-items-center">
     <div class="container d-flex justify-content-center align-items-center min-vh-50 login-personalizado">
         <div class="card shadow-sm p-4 w-100" style="max-width: 400px;">
-          <h2 class="text-center mb-4">Login</h2>
           <!-- Login Form -->
           <form id="loginForm">
+            <h2 class="text-center mb-4">Login</h2>
             <!-- Email -->
             <div class="mb-3">
               <label for="loginEmail" class="form-label">Email</label>
@@ -73,6 +75,7 @@
 
           <!-- Register Form (oculto al inicio) -->
           <form id="registerForm" style="display:none;">
+            <h2 class="text-center mb-4">Register</h2>
             <!-- Nombre y Apellido -->
             <div class="row mb-3">
               <!-- Nombre -->
@@ -121,6 +124,7 @@
           </form>
         </div>
       </div>
+    </main>
 
     <footer class="footer-personalizado">
         <div class="footer-container">

@@ -134,13 +134,12 @@ body {
 }
 
 
-
 /* Formulario */
 .formulario-contacto {
-    background-color: var(--grisClaro); /* gris claro tipo Bootstrap */
+    background-color: white;
+    border-radius: 10px;
     padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 /* Botón */
@@ -153,6 +152,7 @@ body {
 }
 
 .btn-enviar:hover {
-    background-color: #000f25; /* un azul aún más oscuro para hover */
+    color: #000f25;
+    background-color: white; /* un azul aún más oscuro para hover */
 }
 

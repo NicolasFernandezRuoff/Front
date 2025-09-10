@@ -12,10 +12,9 @@
     <title>Contactenos</title>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg bg-white shadow-sm px-3">
         <div class="container-fluid">
-
             <a class="navbar-brand custom-navbar" href="/Front/homePage/homePage.html">
                 <i class="bi bi-compass"></i>
                 MetaMapa
@@ -25,17 +24,14 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-
-            <div class="collapse navbar-collapse  " id="navbarMetaMapa">
+            <div class="collapse navbar-collapse" id="navbarMetaMapa">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0 custom-navbar-center">
                     <li class="nav-item"><a class="nav-link" href="/Front/homePage/homePage.html">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Cargar Hecho</a></li>
                     <li class="nav-item"><a class="nav-link" href="/Front/Mapa/mapa.html">Mapa</a></li>
                     <li class="nav-item"><a class="nav-link active" href="/Front/Contactenos/contactenos.html">Contacto / Soporte</a></li>
-                    <li class="nav-item"><a class="nav-link"
-                            href="/Front/Adminitrador/Adminitrador.html">Administrador</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Front/Adminitrador/Adminitrador.html">Administrador</a></li>
                 </ul>
-
 
                 <form class="d-flex me-3 buscardor-personalizado" role="search">
                     <div class="input-group">
@@ -46,7 +42,6 @@
                     </div>
                 </form>
 
-
                 <a href="/Front/Login/login.html" class="btn btn-login">
                     <i class="bi bi-person"></i> Login / Perfil
                 </a>
@@ -54,57 +49,47 @@
         </div>
     </nav>
 
+    <main class="flex-grow-1 d-flex justify-content-center align-items-center">
+        <form class="formulario-contacto w-50">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="email" placeholder="tu.email@example.com" required>
+            </div>
+            <div class="mb-3">
+                <label for="categoria" class="form-label">Categoría a consultar</label>
+                <select class="form-select" id="categoria" required>
+                    <option selected disabled>Selecciona una categoría</option>
+                    <option value="soporte">Soporte</option>
+                    <option value="cuentas">Cuentas y acceso</option>
+                    <option value="sugerencias">Sugerencias</option>
+                    <option value="otros">Otros</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-enviar w-100">Enviar mensaje</button>
+        </form>
+    </main>
+      
 
-<div class="container my-5 d-flex justify-content-center">
-    <form class="formulario-contacto w-50">
-        <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="email" class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" id="email" placeholder="tu.email@example.com" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="categoria" class="form-label">Categoría a consultar</label>
-            <select class="form-select" id="categoria" required>
-                <option selected disabled>Selecciona una categoría</option>
-                <option value="soporte">Soporte</option>
-                <option value="cuentas">Cuentas y acceso</option>
-                <option value="sugerencias">Sugerencias</option>
-                <option value="otros">Otros</option>
-            </select>
-        </div>
-
-        <div class="mb-3">
-            <label for="mensaje" class="form-label">Mensaje</label>
-            <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-enviar w-100">Enviar mensaje</button>
-    </form>
-</div>
-
-
-
-    <footer class="footer-personalizado">
+    <footer class="footer-personalizado mt-auto">
         <div class="footer-container">
-
-
-            <div class="footer-left footer-left-personalizado ">
+            <div class="footer-left footer-left-personalizado">
                 <span>Legal</span>
             </div>
 
-            <!-- Centro -->
             <div class="footer-center">
                 © 2025 MetaMapa Todos los derechos reservados •
                 <a href="/terminos" class="footer-link">Términos de Uso</a> •
                 <a href="/privacidad" class="footer-link">Política de Privacidad</a>
             </div>
 
-            <!-- Derecha -->
             <div class="footer-right footer-left-personalizado">
                 <a href="https://twitter.com" target="_blank" class="footer-icon">
                     <i class="bi bi-twitter"></i>
@@ -116,7 +101,6 @@
                     <i class="bi bi-github"></i>
                 </a>
             </div>
-
         </div>
     </footer>
 

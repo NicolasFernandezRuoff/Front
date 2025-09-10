@@ -14,9 +14,9 @@ const solicitudes = [
       hecho: { id: 102, titulo: "Corte de luz en barrio norte" },
       motivoDeEliminacion: "Información incorrecta",
       contribuyente: {
-        nombre: "María",
-        apellido: "Gómez",
-        email: "maria.gomez@mail.com"
+        nombre: "leo",
+        apellido: "Contreras",
+        email: "leo.contre@mail.com"
       }
     }
   ];
