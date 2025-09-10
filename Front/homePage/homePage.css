@@ -258,21 +258,6 @@
     text-decoration: none;
     color: var(--primary500);
   }
-  .mapa-personalizado{
-    border-radius: 8px;
-    border: 1px solid var(--borderColor);
-    margin-bottom: 20px;
-  }
-  .mapa-personalizado h2{
-    margin-top: 25px;
-    font-family: 'Inter', sans-serif;
-    color: var(--primary500);
-  }
-  .mapa-personalizado p{
-    font-family: 'Inter', sans-serif;
-    color: var(--neutral600);
-    margin-bottom: 10px;
-  }
   .page-item{
     font-family: 'Inter', sans-serif;
     color: var(--primary500);
@@ -280,4 +265,16 @@
   }
   .separado-paginas{
     margin-left: 5px;
+  }
+  .mapa-personalizado {
+    height: 120px;
+    min-height: 120px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .map-preview {
+    margin-top: 10px;
   }

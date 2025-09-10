@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="contactenos.css" rel="stylesheet">
-    <script src="contactenos.js" defer></script>
-    <title>Contactenos</title>
+    <link href="SolicitudesEliminadas.css" rel="stylesheet">
+    <script src="SolicitudesEliminadas.js" defer></script>
+    <title>Solicitudes Eliminadas</title>
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg bg-white shadow-sm px-3">
         <div class="container-fluid">
@@ -54,40 +52,30 @@
         </div>
     </nav>
 
+      <!-- LAYOUT -->
+  <div class="container-fluid">
+    <div class="row">
 
-<div class="container my-5 d-flex justify-content-center">
-    <form class="formulario-contacto w-50">
-        <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required>
-        </div>
+      <!-- MENU LATERAL -->
+      <aside class="col-3 col-md-2 bg-light border-end p-3 sidebar">
+        <h5 class="mb-3">Notificaciones</h5>
+        <ul class="list-group" id="listaNotificaciones">
+        </ul>
+      </aside>
 
-        <div class="mb-3">
-            <label for="email" class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" id="email" placeholder="tu.email@example.com" required>
-        </div>
+      <!-- CONTENIDO PRINCIPAL -->
+      <main class="col p-4" id="contenidoPrincipal">
+        <div class="placeholder-detalle text-center p-5">
+            <i class="bi bi-inbox display-1 text-muted mb-3"></i>
+            <h4 class="text-secondary">Seleccione una solicitud</h4>
+            <p class="text-muted fs-5">
+              Cuando hagas clic en una notificación, aquí se mostrará el detalle.
+            </p>
+          </div>
+      </main>
 
-        <div class="mb-3">
-            <label for="categoria" class="form-label">Categoría a consultar</label>
-            <select class="form-select" id="categoria" required>
-                <option selected disabled>Selecciona una categoría</option>
-                <option value="soporte">Soporte</option>
-                <option value="cuentas">Cuentas y acceso</option>
-                <option value="sugerencias">Sugerencias</option>
-                <option value="otros">Otros</option>
-            </select>
-        </div>
-
-        <div class="mb-3">
-            <label for="mensaje" class="form-label">Mensaje</label>
-            <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-enviar w-100">Enviar mensaje</button>
-    </form>
-</div>
-
-
+    </div>
+  </div>
 
     <footer class="footer-personalizado">
         <div class="footer-container">
@@ -119,7 +107,6 @@
 
         </div>
     </footer>
-
+    
 </body>
-
 </html>
