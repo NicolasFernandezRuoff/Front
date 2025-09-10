@@ -1,0 +1,274 @@
+:root {
+    --primary500: #001F3FFF;
+    --borderColor: #DEE1E6FF;
+    --neutral600: rgb(67, 87, 87);
+    --natural200: rgb(221, 228, 240);
+    --natural450: rgb(134, 153, 179);
+    --borderAzul: rgb(190, 211, 231);
+    --grisClaro: #f1f1f1;
+    --azulMarino: #001f3f;
+    --beige: #f5f5dc;
+    --mostaza: #d4a017;
+    --bordoSuave: #b23a48;
+    --borderColor: #e0e0e0;
+}
+
+body {
+    font-family: 'Inter', sans-serif !important;
+    background-color: var(--primary100);
+  }
+
+  .custom-navbar {
+    font-family: 'Inter', sans-serif;
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: 700;
+    color: var(--primary500) !important;
+    align-items: center;
+}
+
+.custom-navbar-center .nav-link {
+    position: relative;
+    color: var(--primary500) !important;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.custom-navbar-center .nav-link:hover {
+    font-weight: 700;
+}
+
+.custom-navbar-center .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary500);
+    transition: width 0.3s ease;
+}
+
+
+.custom-navbar-center .nav-link.active {
+    font-weight: 700;
+}
+
+.custom-navbar-center .nav-link.active::after {
+    width: 100%;
+}
+
+.btn-login {
+    border-color: var(--borderColor);
+    color: var(--primary500) !important;
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+    padding: 10px 20px;
+    align-items: center;
+}
+
+.buscardor-personaliza {
+    color: var(--neutral600);
+    font-family: 'Inter', sans-serif;
+}
+
+.buscador-personalizado input {
+    font-family: 'Inter', sans-serif;
+    color: var(--borderColor);
+}
+
+.footer-personalizado {
+    background-color: var(--primary500);
+    color: var(--natural450);
+    font-family: 'Inter', sans-serif;
+    padding: 1rem 2rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* para móviles */
+}
+
+.footer-left {
+    font-weight: bold;
+}
+
+.footer-center {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-link {
+    color: var(--natural450);
+    text-decoration: none;
+    margin: 0 0.3rem;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.footer-right {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-icon {
+    color: var(--natural450);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer-icon:hover {
+    color: white;
+}
+
+.footer-left-personalizado {
+    color: #ffffff;
+}
+.container-xxl {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: var(--azulMarino);
+    margin-bottom: 30px;
+}
+
+.card {
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.drag-drop {
+    border: 2px dashed var(--borderAzul);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    color: var(--neutral600);
+    cursor: pointer;
+}
+
+.tags span {
+    background-color: var(--natural450);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-right: 5px;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 150px;
+    background: url('https://via.placeholder.com/300x150') ;
+    border-radius: 8px;
+}
+
+.card-header {
+    background-color: white;
+    border-bottom: none;
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.1),
+        0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.categorias {
+    font-family: 'Inter', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--primary500);
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .categoria-item {
+    background-color: var(--natural200);
+    border-radius: 30px;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--borderAzul);
+    margin: 0.2rem;
+  }
+  .fileUpload-personalizado{
+    height: 220px;
+    border: 2px dashed var(--borderAzul);
+    border-radius: 8px;
+  }
+  .fileUpload-personalizado:hover{
+    cursor: pointer;
+  }
+  .fileUpload-personalizado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    padding: 20px;
+  }
+  .fileUpload-personalizado label {
+    color: var(--neutral600);
+    font-family: 'Inter', sans-serif;
+    margin-top: 60px;
+  }
+  .fileUpload-personalizado p {
+    margin-top: 10px;
+  }
+  .custom-titulo{
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 700;
+    color: var(--azulMarino);
+    
+  }
+  .card-principal {
+    background-color: white;
+    border-bottom: none;
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.1),
+        0 1px 2px rgba(0, 0, 0, 0.06);
+    padding: 20px; /* agrega espacio dentro de la tarjeta */
+    border-radius: 0.5rem; /* opcional, para que quede más suave */
+}
+
+.btn-previsualizar {
+    background-color: #d3a42e;
+    color: white;
+    border: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+  }
+  .btn-previsualizar:hover {
+    color: white;
+    background-color: #c59826;
+  }
+  
+
+  .btn-confirmar {
+    background-color: #001f3f;
+    color: white;
+    border: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+  }
+  .btn-confirmar:hover {
+    color: white;
+    background-color: #0c4278;
+  }
+  
+  .btn-previsualizar,
+  .btn-confirmar {
+    border-radius: 10px;
+    padding: 0.6rem 1.4rem;
+  }
+  

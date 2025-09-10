@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link href="cargarDeHechos.css" rel="stylesheet">
+    <script src="cargarDeHechos.js" defer></script>
+    <title>Cargar Hechos</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm px-3">
+        <div class="container-fluid">
+
+            <a class="navbar-brand custom-navbar" href="/Front/homePage/homePage.html">
+                <i class="bi bi-compass"></i>
+                MetaMapa
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMetaMapa">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse  " id="navbarMetaMapa">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 custom-navbar-center">
+                    <li class="nav-item"><a class="nav-link" href="/Front/homePage/homePage.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/Front/CargaDeHechos/cargaDeHechos.html">Cargar Hecho</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Front/Mapa/mapa.html">Mapa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Front/Contactenos/contactenos.html">Contacto / Soporte</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Front/Adminitrador/Adminitrador.html">Administrador</a></li>
+                </ul>
+                  
+                <a href="/Front/Login/login.html" class="btn btn-login">
+                  <i class="bi bi-person"></i> Login / Perfil
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-xxl card-principal ">
+        <h2 class="mb-4 custom-navbar">Cargar Nuevo Hecho</h2>
+        <div class="row g-3">
+          
+          <!-- Detalles del Hecho -->
+          <div class="col-md-6">
+            <div class="card shadow-sm">
+              <div class="card-header fw-bold custom-navbar">Detalles del Hecho</div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <label for="titulo" class="form-label">Título del Hecho</label>
+                  <input type="text" class="form-control" id="titulo" placeholder="Ej: El Origen de los Templarios">
+                </div>
+                <div class="mb-3">
+                  <label for="descripcion" class="form-label">Descripción del Hecho</label>
+                  <textarea class="form-control" id="descripcion" rows="4"
+                    placeholder="Proporciona una descripción detallada del hecho. Mínimo 50 caracteres."></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="categoria" class="form-label">Categoría</label>
+                  <select class="form-select" id="categoria">
+                    <option selected>Selecciona una categoría</option>
+                    <option>Historia</option>
+                    <option>Cultura</option>
+                    <option>Arquitectura</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="fecha" class="form-label">Fecha del Hecho (aproximada)</label>
+                  <input type="date" class="form-control" id="fecha">
+                </div>
+              </div>
+            </div>
+          </div>
+      
+        <!-- Ubicación -->
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+            <div class="card-header custom-navbar">Ubicación</div>
+            <div class="card-body">
+                <div class="mb-3">
+                <label for="lugar" class="form-label">Nombre del Lugar</label>
+                <input type="text" class="form-control" id="lugar" placeholder="Ej: Acrópolis de Atenas">
+                </div>
+                <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="latitud" class="form-label">Latitud</label>
+                    <input type="text" class="form-control" id="latitud" placeholder="Ej: 37.9715">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="longitud" class="form-label">Longitud</label>
+                    <input type="text" class="form-control" id="longitud" placeholder="Ej: 23.7257">
+                </div>
+                </div>
+        
+                <div id="map-container" class="rounded" style="height: 250px; width: 100%;"></div>
+            </div>
+            </div>
+        </div>
+            
+          <!-- Multimedia -->
+          <div class="col-md-6">
+            <div class="card shadow-sm">
+              <div class="card-header custom-navbar">Multimedia</div>
+              <div class="card-body text-center">
+                <label for="fileUpload" class="drag-drop fileUpload-personalizado">
+                  <i class="bi bi-cloud-arrow-up fs-1"></i>
+                  <p>Arrastra y suelta tu imagen aquí, o haz clic para seleccionarla</p>
+                </label>
+                <input type="file" id="fileUpload" multiple hidden>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Etiquetas y Colecciones -->
+          <div class="col-md-6">
+            <div class="card shadow-sm">
+              <div class="card-header custom-navbar">Etiquetas y Colecciones</div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <label for="etiqueta" class="form-label">Etiquetas</label>
+                  <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="etiqueta" placeholder="Añadir una etiqueta (Ej: ruinas)">
+                    <button class="btn btn-outline-primary" type="button">Añadir</button>
+                  </div>
+                  <div class="tags">
+                    <span>Historia</span>
+                    <span>Cultura</span>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="coleccion" class="form-label">Colecciones</label>
+                  <select class="form-select" id="coleccion">
+                    <option selected>Seleccionar colección existente</option>
+                    <option>Eventos Históricos</option>
+                    <option>Monumentos</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col-12">
+            <div class="card shadow-sm" id="preview-card" style="display:block;">
+                <div class="card-header custom-navbar">Previsualización del Hecho</div>
+                <div class="card-body">
+                    <h5 id="preview-title" class="custom-titulo">"Titulo"</h5>
+                    <div id="preview-categorias" class="categorias">
+                        <span class="categoria-item">Historia</span>
+                    </div>
+                    <p id="preview-description">
+                        Descripción: "Descripción"
+                    </p>
+                    <p id="preview-extra">
+                        Ubicación | Fecha
+                    </p>
+                    <img src="https://picsum.photos/1200/400" class="img-fluid rounded mb-3 d-block mx-auto" alt="Primera imagen cargada">
+                </div>
+            </div>
+        
+            <div class="d-flex justify-content-end gap-2 mt-2">
+                <button id="toggle-preview" class="btn btn-previsualizar">Ocultar Previsualización</button>
+                <button class="btn btn-confirmar">Confirmar Carga</button>
+            </div>
+        </div>
+        
+      
+        </div>
+      </div>
+
+    <footer class="footer-personalizado">
+        <div class="footer-container">
+
+
+        <div class="footer-left footer-left-personalizado ">
+            <span>Legal</span>
+        </div>
+
+    <!-- Centro -->
+    <div class="footer-center">
+        © 2025 MetaMapa Todos los derechos reservados • 
+        <a href="/terminos" class="footer-link">Términos de Uso</a> • 
+        <a href="/privacidad" class="footer-link">Política de Privacidad</a>
+      </div>
+      
+      <!-- Derecha -->
+      <div class="footer-right footer-left-personalizado">
+        <a href="https://twitter.com" target="_blank" class="footer-icon">
+            <i class="bi bi-twitter"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="footer-icon">
+            <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="https://github.com" target="_blank" class="footer-icon">
+            <i class="bi bi-github"></i>
+        </a>
+      </div>
+      
+    </div>
+  </footer>
+    
+</body>
+</html>
